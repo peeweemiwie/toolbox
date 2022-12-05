@@ -1,2 +1,3 @@
 # toolbox design system
-## toolbox is built using React, TS, Vite, tailwindcss
+
+## toolbox is built with React, TS, Vite, tailwindcss and SCSS
