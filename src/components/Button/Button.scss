@@ -1,0 +1,22 @@
+.tb-btn {
+  font-size: 1.25rem;
+  padding-inline: 1em;
+  padding-block: 0.25em;
+  transition: box-shadow 150ms ease-in-out;
+  &:not([disabled]):hover {
+    box-shadow: var(--box-shadow);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  &-sm {
+    font-size: 1rem;
+  }
+  &-lg {
+    font-size: 1.5rem;
+  }
+  &-block {
+    width: 100%;
+  }
+}

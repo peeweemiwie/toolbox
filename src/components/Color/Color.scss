@@ -1,0 +1,35 @@
+$themes: primary, secondary, success, warning, danger, disabled, accent-warm,
+  accent-cool;
+
+@for $i from 1 through 9 {
+  $color: var(--tb-clr-secondary-90);
+  @if $i >= 5 {
+    $color: white;
+  }
+  @each $theme in $themes {
+    .tb-clr-#{$theme}-#{$i}0 {
+      background-color: var(--tb-clr-#{$theme}-#{$i}0);
+      color: #{$color};
+    }
+  }
+}
+
+.transition-colors {
+  transition-property: background-color, color;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+// default bgcolor and color combinations
+@each $theme in $themes {
+  .tb-#{$theme}-solid {
+    @extend .tb-clr-#{$theme}-60;
+    @extend .transition-colors;
+  }
+  .tb-#{$theme}-border {
+    border: var(--border-heavy) var(--tb-clr-#{$theme}-60);
+  }
+  .tb-#{$theme}-ghost {
+    color: var(--tb-clr-#{$theme}-60);
+  }
+}

@@ -1,0 +1,56 @@
+:root {
+  --tb-font-family-default: "Roboto", sans-serif;
+  --tb-font-family-header: "Montserrat", sans-serif;
+  //colors
+  // --danger: 340;
+  --danger: 0;
+  --primary: 210;
+  --success: 120;
+  --warning: 28;
+  --accent-warm: 320;
+  --accent-cool: 190;
+
+  // hsl values
+  --saturation: 90%;
+
+  @for $i from 1 through 9 {
+    $light: calc(10 - $i);
+    --tb-clr-primary-#{$i}0: hsl(var(--primary) var(--saturation) #{$light}0%);
+    --tb-clr-secondary-#{$i}0: hsl(var(--primary) 35% #{$light}0%);
+    --tb-clr-disabled-#{$i}0: hsl(var(--primary) 0% #{$light + 2}0%);
+    --tb-clr-success-#{$i}0: hsl(var(--success) var(--saturation) #{$light}0%);
+    --tb-clr-warning-#{$i}0: hsl(var(--warning) var(--saturation) #{$light}0%);
+    --tb-clr-danger-#{$i}0: hsl(var(--danger) var(--saturation) #{$light}0%);
+    --tb-clr-accent-warm-#{$i}0: hsl(
+      var(--accent-warm) var(--saturation) #{$light}0%
+    );
+    --tb-clr-accent-cool-#{$i}0: hsl(
+      var(--accent-cool) var(--saturation) #{$light}0%
+    );
+  }
+
+  --border-default: 1px solid;
+  --border-heavy: 2px solid;
+
+  --box-shadow: 3px 3px 4px var(--tb-clr-disabled-50);
+  --font-color: --tb-clr-secondary-80;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color: var(--font-color);
+  font-family: var(--tb-font-family-default);
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-family: var(--tb-font-family-header);
+  }
+}
+
+:disabled {
+  cursor: not-allowed !important;
+}
